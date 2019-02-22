@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="mcontainer">
+  <form bindsubmit="formSubmit" report-submit="true">
+    <view>
+      <view>input:</view>
+      <input class="text" name="text" placeholder="please input here" auto-focus />
+    </view>
+  
+    <view>
+      <button class="btn" type="primary" form-type="submit">提交</button>
+    </view>
+  </form>
+</view>
