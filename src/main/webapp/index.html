@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>实验单管理</title>
+<script src="js/jquery-2.0.3.min.js"></script>
+</head>
+<body>
+<button id="export">导出Excel</button>
+<br>
+<br>
+<!-- 列表展示所有实验单 -->
+<table id="listLaboratory" border="1" style="width: 840px;">
+    <tr><th>ID</th><th>编号</th><th>名称</th><th>备注</th></tr>
+</table>
+</body>
+
+<script type="text/javascript">
+$(function() {
+	
+	//列表显示所有实验单
+	$.ajax({
+		url:"laboratory/listLaboratory",
+		type:"get",
+		dataType:"json",
+		success:function(data, status) {
+			console.log("listLaboratory:success-data = "+data);
+			for (var i in data) {
+				var note = data[i].note;
+				if (note==null) {
+					note = "";
+				}
+				$("#listLaboratory").append("<tr><td>"+data[i].id+"</td><td>"
+						+data[i].monad_num+"</td><td>"+data[i].name+"</td><td>"+
+						note+"</td></tr>");
+			}
+		},
+		error:function(data, status, e) {
+			console.log("listLaboratory:error-e = "+e);
+			alert("读取失败");
+		}
+	});
+	
+	//导出excel按钮的注册事件
+	$("#export").click(function() {
+		//window.location.href = "laboratory/export";
+		$.ajax({
+			url:"laboratory/export",
+			type:"get",
+			success:function(data, status) {
+				console.log("export:success-data = "+data);
+				if (data == "true") {
+					alert("已导出Excel");
+				}
+			},
+			error:function(data, status, e) {
+				console.log("export:error-e = "+e);
+				alert("导出excel失败");
+			}
+		});
+	});
+	
+});
+</script>
+</html>

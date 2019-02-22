@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须定义，非绑定到类或是接口的方式 -->
+<mapper namespace="sdibt.group.dao.LaboratoryDao">
+
+	<!-- 查询所有实验单 -->
+	<select id="listLaboratory" resultType="map">
+		select * from laboratory
+	</select>
+
+</mapper>
