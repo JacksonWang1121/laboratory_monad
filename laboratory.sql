@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2019-02-22 23:05:38
+Date: 2019-02-28 15:46:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,8 +21,11 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `laboratory`;
 CREATE TABLE `laboratory` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `monad_num` varchar(20) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `_class` varchar(50) NOT NULL,
+  `stu_name` varchar(20) NOT NULL,
+  `_date` varchar(20) NOT NULL,
+  `_time` varchar(30) NOT NULL,
+  `equipment` varchar(100) NOT NULL,
   `note` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
@@ -30,6 +33,4 @@ CREATE TABLE `laboratory` (
 -- ----------------------------
 -- Records of laboratory
 -- ----------------------------
-INSERT INTO `laboratory` VALUES ('1', '111', '合法肯定是', '啊士大夫看见哈');
-INSERT INTO `laboratory` VALUES ('2', '222', '发的哈时间', '的撒谎付款');
-INSERT INTO `laboratory` VALUES ('3', '333', '是大连分行', null);
+INSERT INTO `laboratory` VALUES ('1', '二年级一班', '张三', '2019-02-28 15:36:27', '周一第三四节课', '石头,剪刀,布', '阿里山的合法');
