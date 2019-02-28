@@ -11,7 +11,7 @@
 <br>
 <!-- 列表展示所有实验单 -->
 <table id="listLaboratory" border="1" style="width: 840px;">
-    <tr><th>ID</th><th>编号</th><th>名称</th><th>备注</th></tr>
+    <tr><th>编号</th><th>班级</th><th>姓名</th><th>提交日期</th><th>时间</th><th>器材</th><th>补充说明</th></tr>
 </table>
 </body>
 
@@ -31,8 +31,10 @@ $(function() {
 					note = "";
 				}
 				$("#listLaboratory").append("<tr><td>"+data[i].id+"</td><td>"
-						+data[i].monad_num+"</td><td>"+data[i].name+"</td><td>"+
-						note+"</td></tr>");
+						+data[i]._class+"</td><td>"+data[i].stu_name+"</td><td>"
+						+data[i]._date+"</td><td>"
+						+data[i]._time+"</td><td>"+data[i].equipment+"</td><td>"
+						+note+"</td></tr>");
 			}
 		},
 		error:function(data, status, e) {

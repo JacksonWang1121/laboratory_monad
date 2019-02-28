@@ -15,36 +15,17 @@ public class Laboraotry implements Serializable {
 	
 	//主键
 	private int id;
-	//实验单编号
-	private String monadNum;
-	//实验单名称
-	private String name;
-	//备注
+	//班级
+	private String _class;
+	//姓名
+	private String stuName;
+	//提交时间，如2019-02-28 15:27:18
+	private String date;
+	//具体时间，如周四第五六节课
+	private String time;
+	//器材
+	private String equipment;
+	//补充说明
 	private String note;
-
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getMonadNum() {
-		return monadNum;
-	}
-	public void setMonadNum(String monadNum) {
-		this.monadNum = monadNum;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getNote() {
-		return note;
-	}
-	public void setNote(String note) {
-		this.note = note;
-	}
 
 }

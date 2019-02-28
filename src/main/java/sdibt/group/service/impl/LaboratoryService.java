@@ -52,7 +52,7 @@ public class LaboratoryService implements ILaboratoryService {
 		//表头
 		String tableTitle="实验单";
 		//标题
-		String[] heads={"ID","实验单编号","名称","备注"};
+		String[] heads={"编号","姓名","班级","提交日期","器材","时间","补充说明"};
 		//用来生成表格,存储数据
 		List<Map<String,Object>> datas=new ArrayList<Map<String,Object>>();
 		
