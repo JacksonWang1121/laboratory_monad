@@ -20,4 +20,10 @@ public interface LaboratoryDao {
 	 */
 	public List<Map> listLaboratory();
 
+	/**
+	 * 添加实验单
+	 * @param monad
+	 */
+	public void saveMonad(Map monad);
+
 }

@@ -1,5 +1,6 @@
 package sdibt.group.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,6 +38,24 @@ public class LaboratoryController {
 	@ResponseBody
 	public List<Map> listLaboratory() {
 		return this.laboratoryService.listLaboratory();
+	}
+	
+	/**
+	 * 添加实验单
+	 */
+	@RequestMapping("/saveMonad")
+	@ResponseBody
+	public String saveMonad(String cls, String stuName, String date, String time,
+			String equipment, String note) {
+		Map<Object,Object> monad = new HashMap<>();
+		monad.put("cls", cls);
+		monad.put("stuName", stuName);
+		monad.put("date", date);
+		monad.put("time", time);
+		monad.put("equipment", equipment);
+		monad.put("note", note);
+		this.laboratoryService.saveMonad(monad);
+		return "true";
 	}
 	
 	/**

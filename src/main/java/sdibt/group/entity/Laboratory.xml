@@ -8,5 +8,11 @@
 	<select id="listLaboratory" resultType="map">
 		select * from laboratory
 	</select>
+	
+	<!-- 添加实验单 -->
+	<insert id="saveMonad" parameterMap="map">
+	    insert into laboratory (_class, stu_name, _date, _time, equipment, note)
+	    values (#{cls}, #{stuName}, #{date}, #{time}, #{equipment}, #{note})
+	</insert>
 
 </mapper>

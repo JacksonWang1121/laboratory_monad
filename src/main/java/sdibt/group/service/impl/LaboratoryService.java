@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import sdibt.group.dao.LaboratoryDao;
 import sdibt.group.service.ILaboratoryService;
@@ -42,6 +43,16 @@ public class LaboratoryService implements ILaboratoryService {
 	@Override
 	public List<Map> listLaboratory() {
 		return this.laboratoryDao.listLaboratory();
+	}
+	
+	/**
+	 * 添加实验单
+	 * @param monad
+	 */
+	@Transactional
+	@Override
+	public void saveMonad(Map monad) {
+		this.laboratoryDao.saveMonad(monad);
 	}
 
 	/**
