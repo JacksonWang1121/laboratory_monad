@@ -1,7 +1,5 @@
 /**index.wxss**/
-.text {
-  margin-bottom: 30rpx;
-}
+
 .btn {
   width: 50%;
 }

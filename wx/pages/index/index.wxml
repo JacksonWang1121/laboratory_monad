@@ -2,8 +2,46 @@
 <view class="mcontainer">
   <form bindsubmit="formSubmit" report-submit="true">
     <view>
-      <view>input:</view>
-      <input class="text" name="text" placeholder="please input here" auto-focus />
+      <view>班级：</view>
+      <picker name="cls" bindchange="bindClassChange" value="{{classArray[classIndex]}}" range="{{classArray}}">
+        <view>
+          当前选择：{{classArray[classIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view>
+      <view>姓名:</view>
+      <input name="name" placeholder="please input here" auto-focus />
+    </view>
+
+    <view>
+      <view>时间：</view>
+      <picker name="time"
+        mode="multiSelector"
+        bindchange="bindTimeChange"
+        value="{{timeArray[0][timeIndex[0]]}},{{timeArray[1][timeIndex[1]]}}"
+        range="{{timeArray}}"
+      >
+        <view>
+          当前选择：{{timeArray[0][timeIndex[0]]}}，{{timeArray[1][timeIndex[1]]}}
+        </view>
+      </picker>
+    </view>
+
+    <view>
+      <view>器材：</view>
+      <checkbox-group name="equipment" bindchange="bindEquipmentChange">
+        <label wx:for="{{equipmentItems}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" />
+          {{item.value}}
+        </label>
+      </checkbox-group>
+    </view>
+
+    <view>
+      <view>补充说明：</view>
+      <textarea name="note" placeholder="自动聚焦、自动变高" auto-focus />
     </view>
   
     <view>
